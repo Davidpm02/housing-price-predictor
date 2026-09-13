@@ -5,6 +5,31 @@ from app.db.database import get_connection, init_db
 DATASET_PATH = "data/spanish_housing_clean.csv"
 
 
+# Mapping de provincias del dataset a CCAA
+PROVINCE_TO_CCAA = {
+    "A Coruña": "Galicia",
+    "Albacete": "Castilla-La Mancha",
+    "Alicante": "Comunitat Valenciana",
+    "Balears (Illes)": "Illes Balears",
+    "Barcelona": "Cataluña",
+    "Ciudad Real": "Castilla-La Mancha",
+    "Cádiz": "Andalucía",
+    "Girona": "Cataluña",
+    "Guipúzcoa": "País Vasco",
+    "Huelva": "Andalucía",
+    "Madrid": "Comunidad de Madrid",
+    "Santa Cruz De Tenerife": "Canarias",
+    "Segovia": "Castilla y León",
+    "Sevilla": "Andalucía",
+    "Soria": "Castilla y León",
+    "Tarragona": "Cataluña",
+    "Valladolid": "Castilla y León",
+    "València": "Comunitat Valenciana",
+    "Vizcaya": "País Vasco",
+    "Zamora": "Castilla y León",
+    "Álava": "País Vasco"
+}
+
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     df = df.rename(columns={
         "loc_city": "city",
@@ -58,11 +83,32 @@ def seed_database():
 
     df = df[columns]
 
+    # Inferimos las columnas "province" y "ccaa" a partir de la columna "zone"
+    df["province"] = df["zone"].apply(extract_province_from_zone)
+    df["province"] = df["province"].str.strip().str.title()
+
+    df["ccaa"] = df["province"].map(PROVINCE_TO_CCAA)
+
     df.to_sql("properties", conn, if_exists="replace", index=False)
 
     conn.close()
 
     print("✅ Database seeded successfully")
+
+
+def extract_province_from_zone(zone: str) -> str | None:
+    if not isinstance(zone, str):
+        return None
+
+    parts = [p.strip() for p in zone.split(",") if p.strip()]
+
+    if len(parts) == 0:
+        return None
+
+    if len(parts) >= 2:
+        return parts[-1]  # último elemento → provincia
+
+    return parts[0] # Si solo hay un elemento, asumimos que es la provincia
 
 
 if __name__ == "__main__":

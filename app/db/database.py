@@ -28,6 +28,8 @@ def init_db():
         neighborhood TEXT,
         full_location TEXT,
         zone TEXT,
+        province TEXT,
+        ccaa TEXT,
 
         m2_real INTEGER,
         m2_useful REAL,
