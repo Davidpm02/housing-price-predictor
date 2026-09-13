@@ -1,5 +1,26 @@
 from app.db.database import get_connection
 
+def get_properties_paginated(limit: int = 20, offset: int = 0):
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT 
+            house_id,
+            city,
+            price,
+            m2_real,
+            room_num,
+            house_type,
+            full_location
+        FROM properties
+        LIMIT ? OFFSET ?
+    """, (limit, offset))
+
+    rows = cursor.fetchall()
+    conn.close()
+
+    return [dict(row) for row in rows]
 
 def get_all_properties(limit: int = 100):
     conn = get_connection()
