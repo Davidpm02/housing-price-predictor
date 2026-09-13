@@ -3,3 +3,9 @@ __pycache__
 *.xlsx
 *.joblib
 .DS_Store
+
+# data
+data/*.csv
+data/*.db
+data/*.xlsx
+
