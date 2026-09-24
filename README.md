@@ -184,8 +184,8 @@ curl -X POST http://localhost:8000/api/predict \
 ## 📝 Notes
 
 - The model `random_forest_model.joblib` and the database `properties.db` are in `.gitignore` due to size. To reproduce them:
-  1. Place `spanish_housing_clean.csv` in `data/`. You can [download the dataset here](https://huggingface.co/datasets/Davidpm02/spanish_housing_cleaned/resolve/main/spanish_housing_clean.csv?download=true).
-  2. [Download the model](https://huggingface.co/Davidpm02/spanish_housing_rf_model/resolve/main/random_forest_model.joblib?download=true) and save it to `models/random_forest_model.joblib`.
+  1. Place `spanish_housing_clean.csv` in `data/` (see [Project Structure](#projectStructure)). You can [download the dataset here](https://huggingface.co/datasets/Davidpm02/spanish_housing_cleaned/resolve/main/spanish_housing_clean.csv?download=true).
+  2. [Download the model](https://huggingface.co/Davidpm02/spanish_housing_rf_model/resolve/main/random_forest_model.joblib?download=true) and save it to `models/random_forest_model.joblib` (see [Project Structure](#projectStructure)).
   3. Seed the DB with `python3 -m app.db.seed`.
 - Estimates are **for informational purposes only** and do not constitute an official appraisal.
 
