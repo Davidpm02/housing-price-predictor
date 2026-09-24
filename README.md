@@ -23,10 +23,10 @@ Web platform to estimate housing prices in Spain with a **Machine Learning** mod
 
 | Flow | Preview | Description |
 |------|---------|-------------|
-| **Index usage** | <!-- GIF 1: index usage --><br><img src="docs/assets/gif_index.gif" alt="Index usage" width="720" style="max-width: 100%; height: auto;"> | Navigate the landing, scroll through the hero, form and interactive map. |
-| **Price estimation** | <!-- GIF 4: price estimation --><br><img src="docs/assets/gif_predict.gif" alt="Price estimation" width="720" style="max-width: 100%; height: auto;"> | Fill in Province / Type / Condition / m² / Rooms / Baths + extras and get the instant ML estimate. |
-| **Dashboard usage** | <!-- GIF 2: dashboard usage --><br><img src="docs/assets/gif_dashboard.gif" alt="Dashboard usage" width="720" style="max-width: 100%; height: auto;"> | Explore the analytics dashboard: price distribution, composition, trends and province breakdowns. |
-| **Light / Dark toggle** | <!-- GIF 3: theme toggle --><br><img src="docs/assets/gif_toggle_light_dark.gif" alt="Theme toggle" width="720" style="max-width: 100%; height: auto;"> | Switch between light and dark mode — glassmorphic cards adapt instantly. |
+| **Index usage** | <!-- GIF 1: index usage --><br><img src="docs/assets/gif_index.gif" alt="Index usage" width="620" style="max-width: 100%; height: auto;"> | Navigate the landing, scroll through the hero, form and interactive map. |
+| **Price estimation** | <!-- GIF 4: price estimation --><br><img src="docs/assets/gif_predict.gif" alt="Price estimation" width="620" style="max-width: 100%; height: auto;"> | Fill in Province / Type / Condition / m² / Rooms / Baths + extras and get the instant ML estimate. |
+| **Dashboard usage** | <!-- GIF 2: dashboard usage --><br><img src="docs/assets/gif_dashboard.gif" alt="Dashboard usage" width="620" style="max-width: 100%; height: auto;"> | Explore the analytics dashboard: price distribution, composition, trends and province breakdowns. |
+| **Light / Dark toggle** | <!-- GIF 3: theme toggle --><br><img src="docs/assets/gif_toggle_light_dark.gif" alt="Theme toggle" width="620" style="max-width: 100%; height: auto;"> | Switch between light and dark mode — glassmorphic cards adapt instantly. |
 
 
 ## Why this project?
