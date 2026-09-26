@@ -23,10 +23,10 @@ Web platform to estimate housing prices in Spain with a **Machine Learning** mod
 
 | Flow | Preview | Description |
 |------|---------|-------------|
-| **Index usage** | <!-- GIF 1: index usage --><br><img src="docs/assets/gif_index.gif" alt="Index usage" width="720" style="max-width: 100%; height: auto;"> | Navigate the landing, scroll through the hero, form and interactive map. |
-| **Price estimation** | <!-- GIF 4: price estimation --><br><img src="docs/assets/gif_predict.gif" alt="Price estimation" width="720" style="max-width: 100%; height: auto;"> | Fill in Province / Type / Condition / m² / Rooms / Baths + extras and get the instant ML estimate. |
-| **Dashboard usage** | <!-- GIF 2: dashboard usage --><br><img src="docs/assets/gif_dashboard.gif" alt="Dashboard usage" width="720" style="max-width: 100%; height: auto;"> | Explore the analytics dashboard: price distribution, composition, trends and province breakdowns. |
-| **Light / Dark toggle** | <!-- GIF 3: theme toggle --><br><img src="docs/assets/gif_toggle_light_dark.gif" alt="Theme toggle" width="720" style="max-width: 100%; height: auto;"> | Switch between light and dark mode — glassmorphic cards adapt instantly. |
+| **Index usage** | <!-- GIF 1: index usage --><br><img src="docs/assets/gif_index.gif" alt="Index usage" width="620" style="max-width: 100%; height: auto;"> | Navigate the landing, scroll through the hero, form and interactive map. |
+| **Price estimation** | <!-- GIF 4: price estimation --><br><img src="docs/assets/gif_predict.gif" alt="Price estimation" width="620" style="max-width: 100%; height: auto;"> | Fill in Province / Type / Condition / m² / Rooms / Baths + extras and get the instant ML estimate. |
+| **Dashboard usage** | <!-- GIF 2: dashboard usage --><br><img src="docs/assets/gif_dashboard.gif" alt="Dashboard usage" width="620" style="max-width: 100%; height: auto;"> | Explore the analytics dashboard: price distribution, composition, trends and province breakdowns. |
+| **Light / Dark toggle** | <!-- GIF 3: theme toggle --><br><img src="docs/assets/gif_toggle_light_dark.gif" alt="Theme toggle" width="620" style="max-width: 100%; height: auto;"> | Switch between light and dark mode — glassmorphic cards adapt instantly. |
 
 
 ## Why this project?
@@ -185,9 +185,11 @@ curl -X POST http://localhost:8000/api/predict \
 ## 📝 Notes
 
 - The model `random_forest_model.joblib` and the database `properties.db` are in `.gitignore` due to size. To reproduce them:
-  1. Place `spanish_housing_clean.csv` in `data/`. You can [download the dataset here](https://huggingface.co/datasets/Davidpm02/spanish_housing_cleaned/resolve/main/spanish_housing_clean.csv?download=true).
-  2. [Download the model](https://huggingface.co/Davidpm02/spanish_housing_rf_model/resolve/main/random_forest_model.joblib?download=true) and save it to `models/random_forest_model.joblib`.
+
+  1. Place `spanish_housing_clean.csv` in `data/` (see [Project Structure](#projectStructure)). You can [download the dataset here](https://huggingface.co/datasets/Davidpm02/spanish_housing_cleaned/resolve/main/spanish_housing_clean.csv?download=true).
+  2. [Download the model](https://huggingface.co/Davidpm02/spanish_housing_rf_model/resolve/main/random_forest_model.joblib?download=true) and save it to `models/random_forest_model.joblib` (see [Project Structure](#projectStructure)).
   3. Seed the DB (see [Getting Started](#getting-started), better with Option A "One command").
+
 - Estimates are **for informational purposes only** and do not constitute an official appraisal.
 
 ## License
