@@ -83,7 +83,8 @@ What it does (`run.sh:1`):
 1. Checks Python deps (`fastapi`, `uvicorn`, `pandas`, `scikit-learn`, `joblib`) and runs `pip install -r requirements.txt` if any are missing (`run.sh:11`).
 2. Checks `client/node_modules` and runs `npm install` inside `client/` if missing (`run.sh:17`).
 3. Builds the frontend with `npm run build` into `app/static` — the bundle served by FastAPI (`run.sh:23`).
-4. Starts the full stack (API + built frontend) with `uvicorn app.main:app --host 0.0.0.0 --port 8000` (`run.sh:26`).
+4. Seeds the DB if needed.
+5. Starts the full stack (API + built frontend) with `uvicorn app.main:app --host 0.0.0.0 --port 8000` (`run.sh:26`).
 
 Then open **http://localhost:8000**.
 
@@ -184,9 +185,11 @@ curl -X POST http://localhost:8000/api/predict \
 ## 📝 Notes
 
 - The model `random_forest_model.joblib` and the database `properties.db` are in `.gitignore` due to size. To reproduce them:
+
   1. Place `spanish_housing_clean.csv` in `data/` (see [Project Structure](#projectStructure)). You can [download the dataset here](https://huggingface.co/datasets/Davidpm02/spanish_housing_cleaned/resolve/main/spanish_housing_clean.csv?download=true).
   2. [Download the model](https://huggingface.co/Davidpm02/spanish_housing_rf_model/resolve/main/random_forest_model.joblib?download=true) and save it to `models/random_forest_model.joblib` (see [Project Structure](#projectStructure)).
-  3. Seed the DB with `python3 -m app.db.seed`.
+  3. Seed the DB (see [Getting Started](#getting-started), better with Option A "One command").
+
 - Estimates are **for informational purposes only** and do not constitute an official appraisal.
 
 ## License
